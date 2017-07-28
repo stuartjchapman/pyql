@@ -12,6 +12,7 @@ virtualenv:
 before_install:
  - sudo add-apt-repository -y ppa:edd/misc
  - sudo apt-get update
+ - sudo apt-get install zip gzip tar
  - sudo apt-get install -qq python-numpy python-six
  - sudo apt-get install libquantlib0-dev
  - pip install -r requirements.txt
@@ -24,12 +25,13 @@ notifications:
   email: 
     - stuart.chapman@seronecapital.com
 before_deploy:
-  - zip pyql_sjc
+  - zip -r pyql_sjc.zip $TRAVIS_BUILD_DIR
 deploy:
-#  local_dir: C:\dev\pyql
   provider: releases
   user: "stuartjchapman"
   password: "YaG-fdM-7nQ-7SF"
   file: "pyql_sjc.zip"
   skip_cleanup: true
   overwrite: true 
+  on:
+    tags
