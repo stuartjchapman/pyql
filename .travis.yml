@@ -34,4 +34,5 @@ deploy:
   skip_cleanup: true
   overwrite: true 
   on:
-    tags
+    tags: true
+    all_branches: true
