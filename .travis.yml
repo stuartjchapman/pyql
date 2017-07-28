@@ -22,4 +22,4 @@ script:
  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then python -m unittest discover; fi
 notifications:
   email: 
-    - dpinte@enthought.com
+    - stuart.chapman@seronecapital.com
