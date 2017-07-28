@@ -24,8 +24,7 @@ notifications:
   email: 
     - stuart.chapman@seronecapital.com
 before_deploy:
-  cd home/travis/build/stuartjchapman/pyql/quantlib
-  zip pyql_sjc
+  - zip pyql_sjc
 deploy:
 #  local_dir: C:\dev\pyql
   provider: releases
